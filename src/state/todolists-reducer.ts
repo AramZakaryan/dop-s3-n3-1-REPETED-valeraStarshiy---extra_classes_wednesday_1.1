@@ -5,15 +5,13 @@ import {FilterValuesType, TodolistType} from "../App";
 export type AddTodolistActionType = ReturnType<typeof addTodolistAC>
 
 
-
-
 type ActionsType = AddTodolistActionType
 
-const initialState: Array<TodolistType> =  []
+const initialState: Array<TodolistType> = []
 
 export const todolistsReducer = (state: Array<TodolistType> = initialState, action: ActionsType): Array<TodolistType> => {
     switch (action.type) {
-        case 'АDD-TODOLIST': {
+        case 'ADD-TODOLIST': {
             return [{
                 id: action.todolistId,
                 title: action.title,
@@ -26,5 +24,8 @@ export const todolistsReducer = (state: Array<TodolistType> = initialState, acti
 }
 
 
-export const addTodolistAC = (title: string) => ({ type: 'ADD-TODOLIST', title: title, todolistId: v1()})
+export const addTodolistAC = (title: string) => {
+    debugger
+    return {type: 'ADD-TODOLIST', title: title, todolistId: v1()}
+}
 
